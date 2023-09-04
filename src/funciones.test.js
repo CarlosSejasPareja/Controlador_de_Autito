@@ -54,5 +54,12 @@ describe(" Pruebas Funciones", () => {
     expect(funciones.simularMovimientoAuto("5,5/1,2N/A")).toEqual("<p> Posicion Final: 1,3N </p>");
     });
 
+    it("Muestra posicion final cuando avanza hacia el SUD respondiendo al comando A ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/1,2S/A")).toEqual("<p> Posicion Final: 1,1S </p>");
+    });
+
+
+
 
 });

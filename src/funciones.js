@@ -77,6 +77,8 @@ function simularMovimientoAuto(comandosInput){
     if (instruccion === 'A') {
       if (direccion === 'N') {
         y++;
+      }else if (direccion === 'S') {
+        y--;
       }
     }
 
