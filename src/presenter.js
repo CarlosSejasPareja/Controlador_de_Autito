@@ -26,16 +26,15 @@ form.addEventListener("submit", (event) => {
           alert('La dirección de la posición inicial no es válida (debe ser N, S, E u O)');
         }
         else{
-          resultado.innerHTML=htmlGenerado;
+          if(funciones.esComandosValidos(comandosInput)==false){
+            alert('Las instrucciones no son válidas (debe ser A,I o D)');
+          }
+          else{
+            resultado.innerHTML=htmlGenerado;
+          }
         }
-        
       }
-
+    }
   }
-   
-
-  
-
-
 
 });

@@ -53,7 +53,15 @@ function esDireccionValida(comandosInput) {
   return direccionesValidas.includes(direccion);
 }
 
+function esComandosValidos(comandosInput) {
+  const partes = comandosInput.split('/');
+  const instrucciones = partes[2];
+  const instruccionesValidasExpresion = /^[ADI]+$/; 
+
+  return instruccionesValidasExpresion.test(instrucciones); 
+}
 
 
-const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida};
+
+const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida,esComandosValidos};
 export default funciones;

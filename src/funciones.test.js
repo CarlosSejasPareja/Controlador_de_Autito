@@ -40,5 +40,15 @@ describe(" Pruebas Funciones", () => {
       expect(funciones.esDireccionValida("5,5/1,5X/IAIAIA")).toEqual(false);
     });
 
+    it("Admite si instruccione Ingresadas son correctas (A,I,D)", () => {
+       
+      expect(funciones.esComandosValidos("5,5/1,5N/IAIAIA")).toEqual(true);
+    });
+
+    it("Niega si instruccioneS Ingresadas NO son correctas (A,I,D)", () => {
+       
+      expect(funciones.esComandosValidos("5,5/1,5X/IAFAIA")).toEqual(false);
+    });
+
 
 });
