@@ -11,13 +11,19 @@ form.addEventListener("submit", (event) => {
   const htmlGenerado = funciones.mostrarDatosIngresados(comandosInput,resultado.innerHTML);
 
   
-
-  if (funciones.esPosicionInicialValida(comandosInput)==false){
-    alert('La posición inicial está fuera de los límites de la superficie.');
+  if(funciones.esDimensionValida(comandosInput)==false){
+    alert('La dimension ingreasada no es valida');
   }
   else{
-    resultado.innerHTML=htmlGenerado;
-  } 
+    if (funciones.esPosicionInicialValida(comandosInput)==false){
+      alert('La posición inicial está fuera de los límites de la superficie.');
+    }
+    else{
+      resultado.innerHTML=htmlGenerado;
+    } 
+
+  }
+
 
 
 });

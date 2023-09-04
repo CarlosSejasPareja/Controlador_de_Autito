@@ -15,7 +15,16 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.esPosicionInicialValida("5,5/1,7N/IAIAIA")).toEqual(false);
     });
+//VAERIFICACIONES RESPECTO A LAS DIMENSIONES 
+    it("validar cuando dimension ingreasa sea correcta", () => {
+       
+      expect(funciones.esDimensionValida("5,5/1,5N/IAIAIA")).toEqual(true);
+    });
 
+    it("rechazar  cuando dimension sea incorrecta", () => {
+       
+      expect(funciones.esDimensionValida("5,-5/1,5N/IAIAIA")).toEqual(false);
+    });
 
 
 });

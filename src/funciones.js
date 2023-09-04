@@ -22,8 +22,19 @@ function esPosicionInicialValida(comandosInput){
   return false;
 
 }
+function esDimensionValida(comandosInput){
+  const partes = comandosInput.split('/');
+  const dimensiones = partes[0].split(',');
+  const limiteX = parseInt(dimensiones[0]);
+  const limiteY = parseInt(dimensiones[1]);
+  if (limiteX>0 && limiteY>0){
+    return true;
+  }
+  return false;
+
+}
 
 
 
-const funciones={mostrarDatosIngresados,esPosicionInicialValida};
+const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida};
 export default funciones;
