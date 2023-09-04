@@ -7,6 +7,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const comandosInput = document.querySelector("#comandos").value;
   const resultado=document.querySelector("#resultado");
+  const posicionFinal=document.querySelector("#posicion-final");
 
   const htmlGenerado = funciones.mostrarDatosIngresados(comandosInput,resultado.innerHTML);
 
@@ -30,7 +31,9 @@ form.addEventListener("submit", (event) => {
             alert('Las instrucciones no son válidas (debe ser A,I o D)');
           }
           else{
+            const nuevaPosicionYDireccion = funciones.simularMovimientoAuto(comandosInput);
             resultado.innerHTML=htmlGenerado;
+            posicionFinal.innerHTML=nuevaPosicionYDireccion;
           }
         }
       }

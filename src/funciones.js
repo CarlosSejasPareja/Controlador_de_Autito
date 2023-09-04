@@ -61,7 +61,30 @@ function esComandosValidos(comandosInput) {
   return instruccionesValidasExpresion.test(instrucciones); 
 }
 
+function simularMovimientoAuto(comandosInput){
+  const partes = comandosInput.split('/');
+  const dimensiones = partes[0].split(',');
+  const limiteX = parseInt(dimensiones[0]);
+  const limiteY = parseInt(dimensiones[1]);
+  const posicionInicial = partes[1].split(',');
+  let x = parseInt(posicionInicial[0]);
+  let y = parseInt(posicionInicial[1]);
+  let direccion = posicionInicial[1][1]; 
+  const instrucciones = partes[2];
+
+  for (let i = 0; i < instrucciones.length; i++){
+    const instruccion = instrucciones[i];
+    if (instruccion === 'A') {
+      if (direccion === 'N') {
+        y++;
+      }
+    }
+
+  }
+  return "<p> Posicion Final: "+x+","+y+direccion+" </p>";
+}
 
 
-const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida,esComandosValidos};
+
+const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida,esComandosValidos,simularMovimientoAuto};
 export default funciones;

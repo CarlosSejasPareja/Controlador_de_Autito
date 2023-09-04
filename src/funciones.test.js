@@ -49,6 +49,10 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.esComandosValidos("5,5/1,5X/IAFAIA")).toEqual(false);
     });
+// SIMULACION DE MOVIMIENTO 
+   it("Muestra posicion final cuando avanza hacia el NORTE respondiendo al comando A ", () => {   
+    expect(funciones.simularMovimientoAuto("5,5/1,2N/A")).toEqual("<p> Posicion Final: 1,3N </p>");
+    });
 
 
 });
