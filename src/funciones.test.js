@@ -68,6 +68,11 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.simularMovimientoAuto("5,5/1,2O/A")).toEqual("<p> Posicion Final: 0,2O </p>");
     });
+    //GIRAR A LA IZQUIERDA
+    it("Muestra posicion final: empieza mirando al NORTE termina mirando al OESTE  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/1,2N/I")).toEqual("<p> Posicion Final: 1,2O </p>");
+    });
 
 
 

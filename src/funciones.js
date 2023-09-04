@@ -84,12 +84,16 @@ function simularMovimientoAuto(comandosInput){
       }else if (direccion === 'O') {
         x--;
       }
-    }
+    }else if (instruccion === 'I') {
+      if (direccion === 'N') {
+        direccion = 'O';
+      }
 
   }
   return "<p> Posicion Final: "+x+","+y+direccion+" </p>";
 }
 
+}
 
 
 const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida,esComandosValidos,simularMovimientoAuto};
