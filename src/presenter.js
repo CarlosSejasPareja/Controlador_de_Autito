@@ -10,7 +10,14 @@ form.addEventListener("submit", (event) => {
 
   const htmlGenerado = funciones.mostrarDatosIngresados(comandosInput,resultado.innerHTML);
 
-  resultado.innerHTML=htmlGenerado;
+  
+
+  if (funciones.esPosicionInicialValida(comandosInput)==false){
+    alert('La posición inicial está fuera de los límites de la superficie.');
+  }
+  else{
+    resultado.innerHTML=htmlGenerado;
+  } 
 
 
 });
