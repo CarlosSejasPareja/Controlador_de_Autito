@@ -87,6 +87,8 @@ function simularMovimientoAuto(comandosInput){
     }else if (instruccion === 'I') {
       if (direccion === 'N') {
         direccion = 'O';
+      }else if (direccion === 'S') {
+        direccion = 'E';
       }
 
   }
