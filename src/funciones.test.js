@@ -99,6 +99,15 @@ describe(" Pruebas Funciones", () => {
       expect(funciones.simularMovimientoAuto("5,5/1,2S/D")).toEqual("<p> Posicion Final: 1,2O </p>");
     });
 
+    it("Muestra posicion final: empieza mirando al ESTE termina mirando al SUD  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/1,2E/D")).toEqual("<p> Posicion Final: 1,2S </p>");
+    });
+    it("Muestra posicion final: empieza mirando al OESTE termina mirando al NORTE  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/1,2O/D")).toEqual("<p> Posicion Final: 1,2N </p>");
+    });
+
 
 
 
