@@ -75,38 +75,49 @@ function simularMovimientoAuto(comandosInput){
   for (let i = 0; i < instrucciones.length; i++){
     const instruccion = instrucciones[i];
     if (instruccion === 'A') {
+      let siguienteX = x;
+      let siguienteY = y;
       if (direccion === 'N') {
-        y++;
+        siguienteY++;
       }else if (direccion === 'S') {
-        y--;
+        siguienteY--;
       }else if (direccion === 'E') {
-        x++;
+        siguienteX++;
       }else if (direccion === 'O') {
-        x--;
+        siguienteX--;
       }
+      if(siguienteX>=0 && siguienteX <= limiteX && siguienteY>=0 && siguienteY <= limiteY){
+        x=siguienteX;
+        y=siguienteY
+      }
+
     }else if (instruccion === 'I') {
       if (direccion === 'N') {
         direccion = 'O';
-      }else if (direccion === 'S') {
+      } else if (direccion === 'S') {
         direccion = 'E';
-      }else if (direccion === 'E') {
+      } else if (direccion === 'E') {
         direccion = 'N';
-      }else if (direccion === 'O') {
+      } else if (direccion === 'O') {
         direccion = 'S';
       }
     }else if (instruccion === 'D') {
       if (direccion === 'N') {
         direccion = 'E';
-      }else if (direccion === 'S') {
+      } else if (direccion === 'S') {
         direccion = 'O';
       } else if (direccion === 'E') {
         direccion = 'S';
-      }else if (direccion === 'O') {
+      } else if (direccion === 'O') {
         direccion = 'N';
       }
     }
+
+  }
   return "<p> Posicion Final: "+x+","+y+direccion+" </p>";
-}
+  
+
+
 
 }
 

@@ -107,6 +107,16 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.simularMovimientoAuto("5,5/1,2O/D")).toEqual("<p> Posicion Final: 1,2N </p>");
     });
+    
+    it("Muestra posicion final: PODEMOS MOVERNOS A TODOS LADOS  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/3,3E/IADA")).toEqual("<p> Posicion Final: 4,4E </p>");
+    });
+
+    it("Ignora los comandos de avance cuando se encuentra en los margenes  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/0,0N/IAIA")).toEqual("<p> Posicion Final: 0,0S </p>");
+    });
 
 
 
