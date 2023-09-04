@@ -88,6 +88,11 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.simularMovimientoAuto("5,5/1,2O/I")).toEqual("<p> Posicion Final: 1,2S </p>");
     });
+    //GIRAR A LA DERECHA 
+    it("Muestra posicion final: empieza mirando al NORTE termina mirando al ESTE  ", () => {
+       
+      expect(funciones.simularMovimientoAuto("5,5/1,2N/D")).toEqual("<p> Posicion Final: 1,2E </p>");
+    });
 
 
 
