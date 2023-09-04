@@ -34,7 +34,26 @@ function esDimensionValida(comandosInput){
 
 }
 
+function validarFormatoLineaDeComandos(comandosInput) {
+  const partes = comandosInput.split('/');
+    if (partes.length !== 3) {
+        return false;
+    }
+    return true;
+ 
+}
 
 
-const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida};
+function esDireccionValida(comandosInput) {
+  const partes = comandosInput.split('/');
+  const posicionInicial = partes[1].split(',');
+  const direccionesValidas = ['N', 'S', 'E', 'O'];
+  let direccion = posicionInicial[1][1]; 
+  
+  return direccionesValidas.includes(direccion);
+}
+
+
+
+const funciones={mostrarDatosIngresados,esPosicionInicialValida,esDimensionValida,validarFormatoLineaDeComandos,esDireccionValida};
 export default funciones;

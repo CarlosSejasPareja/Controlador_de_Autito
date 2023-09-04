@@ -25,6 +25,20 @@ describe(" Pruebas Funciones", () => {
        
       expect(funciones.esDimensionValida("5,-5/1,5N/IAIAIA")).toEqual(false);
     });
+     
+    it("comprobar si formato es ingresado correctamente", () => {
+       
+      expect(funciones.validarFormatoLineaDeComandos("5,-5 1,5N/IAIAIA")).toEqual(false);
+    });
+
+    it("Admite si Direccion  Ingresada es correcta (N,S,E,O)", () => {
+       
+      expect(funciones.esDireccionValida("5,5/1,5N/IAIAIA")).toEqual(true);
+    }); 
+    it("Niega si Direccion  Ingresada es incorrecta (distinto de N,S,E,O)", () => {
+       
+      expect(funciones.esDireccionValida("5,5/1,5X/IAIAIA")).toEqual(false);
+    });
 
 
 });

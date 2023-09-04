@@ -10,19 +10,31 @@ form.addEventListener("submit", (event) => {
 
   const htmlGenerado = funciones.mostrarDatosIngresados(comandosInput,resultado.innerHTML);
 
-  
-  if(funciones.esDimensionValida(comandosInput)==false){
-    alert('La dimension ingreasada no es valida');
+  if(funciones.validarFormatoLineaDeComandos(comandosInput)==false){
+    alert('El formato de los comandos ingresados no es válido. Siga el ejemplo porfavor');
   }
   else{
-    if (funciones.esPosicionInicialValida(comandosInput)==false){
-      alert('La posición inicial está fuera de los límites de la superficie.');
+    if(funciones.esDimensionValida(comandosInput)==false){
+      alert('La dimension ingreasada no es valida');
     }
     else{
-      resultado.innerHTML=htmlGenerado;
-    } 
+      if (funciones.esPosicionInicialValida(comandosInput)==false){
+        alert('La posición inicial está fuera de los límites de la superficie.');
+      }
+      else{
+        if( funciones.esDireccionValida(comandosInput)==false){
+          alert('La dirección de la posición inicial no es válida (debe ser N, S, E u O)');
+        }
+        else{
+          resultado.innerHTML=htmlGenerado;
+        }
+        
+      }
 
   }
+   
+
+  
 
 
 
